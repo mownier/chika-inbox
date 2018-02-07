@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		386291A6692D83FBE3F6842B /* Pods_ChikaInboxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EF31F98F637AB3DBA24597 /* Pods_ChikaInboxTests.framework */; };
+		48C224B0202AC10100EB2D0E /* Inbox.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C224AF202AC10100EB2D0E /* Inbox.xcassets */; };
+		48C224B2202AC50E00EB2D0E /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C224B1202AC50E00EB2D0E /* Output.swift */; };
+		48D8D3642029797800A4B8B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48D8D3632029797800A4B8B3 /* GoogleService-Info.plist */; };
+		48D8D3662029856100A4B8B3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D8D3652029856100A4B8B3 /* Data.swift */; };
+		48D8D36820298F4000A4B8B3 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D8D36720298F4000A4B8B3 /* Cell.swift */; };
+		48DF602920296E1C00A45624 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF602820296E1C00A45624 /* AppDelegate.swift */; };
+		48DF602B20296E1C00A45624 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF602A20296E1C00A45624 /* ViewController.swift */; };
+		48DF602E20296E1C00A45624 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48DF602C20296E1C00A45624 /* Main.storyboard */; };
+		48DF603020296E1C00A45624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48DF602F20296E1C00A45624 /* Assets.xcassets */; };
+		48DF603320296E1C00A45624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48DF603120296E1C00A45624 /* LaunchScreen.storyboard */; };
+		48DF603E20296E1C00A45624 /* ChikaInboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF603D20296E1C00A45624 /* ChikaInboxTests.swift */; };
+		48DF604A20296F2300A45624 /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48DF604920296F2300A45624 /* Inbox.storyboard */; };
+		48DF604C20296FA600A45624 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF604B20296FA600A45624 /* Scene.swift */; };
+		48DF604E2029701100A45624 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF604D2029701100A45624 /* Factory.swift */; };
+		48DF60502029701E00A45624 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF604F2029701E00A45624 /* Theme.swift */; };
+		ECBB0E63301FD75F6E3B4D9F /* Pods_ChikaInbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 975FBF1CF8262155782AC7AF /* Pods_ChikaInbox.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48DF603A20296E1C00A45624 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48DF601D20296E1C00A45624 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48DF602420296E1C00A45624;
+			remoteInfo = ChikaInbox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1938BAB3B9FD0CD6A060A20C /* Pods-ChikaInboxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChikaInboxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChikaInboxTests/Pods-ChikaInboxTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1FFDF5AA7F9790B62412B758 /* Pods-ChikaInbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChikaInbox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChikaInbox/Pods-ChikaInbox.debug.xcconfig"; sourceTree = "<group>"; };
+		48C224AF202AC10100EB2D0E /* Inbox.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Inbox.xcassets; sourceTree = "<group>"; };
+		48C224B1202AC50E00EB2D0E /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
+		48D8D3632029797800A4B8B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../ChikaFirebaseDemo/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48D8D3652029856100A4B8B3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		48D8D36720298F4000A4B8B3 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		48DF602520296E1C00A45624 /* ChikaInbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChikaInbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48DF602820296E1C00A45624 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		48DF602A20296E1C00A45624 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48DF602D20296E1C00A45624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		48DF602F20296E1C00A45624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48DF603220296E1C00A45624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		48DF603420296E1C00A45624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48DF603920296E1C00A45624 /* ChikaInboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChikaInboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48DF603D20296E1C00A45624 /* ChikaInboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikaInboxTests.swift; sourceTree = "<group>"; };
+		48DF603F20296E1C00A45624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48DF604920296F2300A45624 /* Inbox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inbox.storyboard; sourceTree = "<group>"; };
+		48DF604B20296FA600A45624 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		48DF604D2029701100A45624 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		48DF604F2029701E00A45624 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		80EF31F98F637AB3DBA24597 /* Pods_ChikaInboxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChikaInboxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		975FBF1CF8262155782AC7AF /* Pods_ChikaInbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChikaInbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D955DB28D338C309A3C57C8 /* Pods-ChikaInboxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChikaInboxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChikaInboxTests/Pods-ChikaInboxTests.release.xcconfig"; sourceTree = "<group>"; };
+		BE142364453C2578C6380BBB /* Pods-ChikaInbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChikaInbox.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChikaInbox/Pods-ChikaInbox.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48DF602220296E1C00A45624 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECBB0E63301FD75F6E3B4D9F /* Pods_ChikaInbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48DF603620296E1C00A45624 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				386291A6692D83FBE3F6842B /* Pods_ChikaInboxTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		106DF98D27005845789CBD3B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FFDF5AA7F9790B62412B758 /* Pods-ChikaInbox.debug.xcconfig */,
+				BE142364453C2578C6380BBB /* Pods-ChikaInbox.release.xcconfig */,
+				1938BAB3B9FD0CD6A060A20C /* Pods-ChikaInboxTests.debug.xcconfig */,
+				9D955DB28D338C309A3C57C8 /* Pods-ChikaInboxTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		48DF601C20296E1C00A45624 = {
+			isa = PBXGroup;
+			children = (
+				48DF602720296E1C00A45624 /* ChikaInbox */,
+				48DF603C20296E1C00A45624 /* ChikaInboxTests */,
+				48DF602620296E1C00A45624 /* Products */,
+				106DF98D27005845789CBD3B /* Pods */,
+				F1B981FEEFB85DE5616CD59D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		48DF602620296E1C00A45624 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48DF602520296E1C00A45624 /* ChikaInbox.app */,
+				48DF603920296E1C00A45624 /* ChikaInboxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48DF602720296E1C00A45624 /* ChikaInbox */ = {
+			isa = PBXGroup;
+			children = (
+				48D8D3632029797800A4B8B3 /* GoogleService-Info.plist */,
+				48DF603420296E1C00A45624 /* Info.plist */,
+				48DF602820296E1C00A45624 /* AppDelegate.swift */,
+				48DF602A20296E1C00A45624 /* ViewController.swift */,
+				48DF602F20296E1C00A45624 /* Assets.xcassets */,
+				48DF603120296E1C00A45624 /* LaunchScreen.storyboard */,
+				48DF602C20296E1C00A45624 /* Main.storyboard */,
+				48DF604820296E2200A45624 /* Source */,
+			);
+			path = ChikaInbox;
+			sourceTree = "<group>";
+		};
+		48DF603C20296E1C00A45624 /* ChikaInboxTests */ = {
+			isa = PBXGroup;
+			children = (
+				48DF603D20296E1C00A45624 /* ChikaInboxTests.swift */,
+				48DF603F20296E1C00A45624 /* Info.plist */,
+			);
+			path = ChikaInboxTests;
+			sourceTree = "<group>";
+		};
+		48DF604820296E2200A45624 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				48DF604920296F2300A45624 /* Inbox.storyboard */,
+				48D8D36720298F4000A4B8B3 /* Cell.swift */,
+				48D8D3652029856100A4B8B3 /* Data.swift */,
+				48DF604D2029701100A45624 /* Factory.swift */,
+				48C224B1202AC50E00EB2D0E /* Output.swift */,
+				48DF604B20296FA600A45624 /* Scene.swift */,
+				48DF604F2029701E00A45624 /* Theme.swift */,
+				48C224AF202AC10100EB2D0E /* Inbox.xcassets */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F1B981FEEFB85DE5616CD59D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				975FBF1CF8262155782AC7AF /* Pods_ChikaInbox.framework */,
+				80EF31F98F637AB3DBA24597 /* Pods_ChikaInboxTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48DF602420296E1C00A45624 /* ChikaInbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48DF604220296E1C00A45624 /* Build configuration list for PBXNativeTarget "ChikaInbox" */;
+			buildPhases = (
+				184614AA44515C93F9022DA0 /* [CP] Check Pods Manifest.lock */,
+				48DF602120296E1C00A45624 /* Sources */,
+				48DF602220296E1C00A45624 /* Frameworks */,
+				48DF602320296E1C00A45624 /* Resources */,
+				B7DAAAE5A0B8BDBE696866B1 /* [CP] Embed Pods Frameworks */,
+				B6BDD94AD8FADBECF4525CDF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChikaInbox;
+			productName = ChikaInbox;
+			productReference = 48DF602520296E1C00A45624 /* ChikaInbox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		48DF603820296E1C00A45624 /* ChikaInboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48DF604520296E1C00A45624 /* Build configuration list for PBXNativeTarget "ChikaInboxTests" */;
+			buildPhases = (
+				07B0CCB580C0E528247FF73B /* [CP] Check Pods Manifest.lock */,
+				48DF603520296E1C00A45624 /* Sources */,
+				48DF603620296E1C00A45624 /* Frameworks */,
+				48DF603720296E1C00A45624 /* Resources */,
+				D19D6C8A29E739D0890E621B /* [CP] Embed Pods Frameworks */,
+				2D04D442C9FE063A461D8372 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48DF603B20296E1C00A45624 /* PBXTargetDependency */,
+			);
+			name = ChikaInboxTests;
+			productName = ChikaInboxTests;
+			productReference = 48DF603920296E1C00A45624 /* ChikaInboxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48DF601D20296E1C00A45624 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Nir;
+				TargetAttributes = {
+					48DF602420296E1C00A45624 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					48DF603820296E1C00A45624 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 48DF602420296E1C00A45624;
+					};
+				};
+			};
+			buildConfigurationList = 48DF602020296E1C00A45624 /* Build configuration list for PBXProject "ChikaInbox" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 48DF601C20296E1C00A45624;
+			productRefGroup = 48DF602620296E1C00A45624 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48DF602420296E1C00A45624 /* ChikaInbox */,
+				48DF603820296E1C00A45624 /* ChikaInboxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48DF602320296E1C00A45624 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48DF603320296E1C00A45624 /* LaunchScreen.storyboard in Resources */,
+				48DF603020296E1C00A45624 /* Assets.xcassets in Resources */,
+				48C224B0202AC10100EB2D0E /* Inbox.xcassets in Resources */,
+				48D8D3642029797800A4B8B3 /* GoogleService-Info.plist in Resources */,
+				48DF602E20296E1C00A45624 /* Main.storyboard in Resources */,
+				48DF604A20296F2300A45624 /* Inbox.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48DF603720296E1C00A45624 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07B0CCB580C0E528247FF73B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChikaInboxTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		184614AA44515C93F9022DA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChikaInbox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D04D442C9FE063A461D8372 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChikaInboxTests/Pods-ChikaInboxTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6BDD94AD8FADBECF4525CDF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChikaInbox/Pods-ChikaInbox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7DAAAE5A0B8BDBE696866B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChikaInbox/Pods-ChikaInbox-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChikaCore/ChikaCore.framework",
+				"${BUILT_PRODUCTS_DIR}/ChikaFirebase/ChikaFirebase.framework",
+				"${BUILT_PRODUCTS_DIR}/ChikaRegistrar/ChikaRegistrar.framework",
+				"${BUILT_PRODUCTS_DIR}/ChikaSignIn/ChikaSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCommunity/FirebaseCommunity.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChikaCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChikaFirebase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChikaRegistrar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChikaSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTools.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCommunity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChikaInbox/Pods-ChikaInbox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D19D6C8A29E739D0890E621B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChikaInboxTests/Pods-ChikaInboxTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48DF602120296E1C00A45624 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C224B2202AC50E00EB2D0E /* Output.swift in Sources */,
+				48DF604E2029701100A45624 /* Factory.swift in Sources */,
+				48D8D3662029856100A4B8B3 /* Data.swift in Sources */,
+				48D8D36820298F4000A4B8B3 /* Cell.swift in Sources */,
+				48DF602B20296E1C00A45624 /* ViewController.swift in Sources */,
+				48DF60502029701E00A45624 /* Theme.swift in Sources */,
+				48DF602920296E1C00A45624 /* AppDelegate.swift in Sources */,
+				48DF604C20296FA600A45624 /* Scene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48DF603520296E1C00A45624 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48DF603E20296E1C00A45624 /* ChikaInboxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48DF603B20296E1C00A45624 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48DF602420296E1C00A45624 /* ChikaInbox */;
+			targetProxy = 48DF603A20296E1C00A45624 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		48DF602C20296E1C00A45624 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48DF602D20296E1C00A45624 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		48DF603120296E1C00A45624 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48DF603220296E1C00A45624 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		48DF604020296E1C00A45624 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		48DF604120296E1C00A45624 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		48DF604320296E1C00A45624 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FFDF5AA7F9790B62412B758 /* Pods-ChikaInbox.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
+				INFOPLIST_FILE = ChikaInbox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nir.ChikaInbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		48DF604420296E1C00A45624 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE142364453C2578C6380BBB /* Pods-ChikaInbox.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
+				INFOPLIST_FILE = ChikaInbox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nir.ChikaInbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		48DF604620296E1C00A45624 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1938BAB3B9FD0CD6A060A20C /* Pods-ChikaInboxTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
+				INFOPLIST_FILE = ChikaInboxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nir.ChikaInboxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChikaInbox.app/ChikaInbox";
+			};
+			name = Debug;
+		};
+		48DF604720296E1C00A45624 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D955DB28D338C309A3C57C8 /* Pods-ChikaInboxTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
+				INFOPLIST_FILE = ChikaInboxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nir.ChikaInboxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChikaInbox.app/ChikaInbox";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48DF602020296E1C00A45624 /* Build configuration list for PBXProject "ChikaInbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48DF604020296E1C00A45624 /* Debug */,
+				48DF604120296E1C00A45624 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48DF604220296E1C00A45624 /* Build configuration list for PBXNativeTarget "ChikaInbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48DF604320296E1C00A45624 /* Debug */,
+				48DF604420296E1C00A45624 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48DF604520296E1C00A45624 /* Build configuration list for PBXNativeTarget "ChikaInboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48DF604620296E1C00A45624 /* Debug */,
+				48DF604720296E1C00A45624 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 48DF601D20296E1C00A45624 /* Project object */;
+}
