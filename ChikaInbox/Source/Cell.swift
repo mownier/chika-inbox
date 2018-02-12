@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChikaUI
 import DateTools
 
 class Cell: UITableViewCell {
@@ -21,6 +22,15 @@ class Cell: UITableViewCell {
     @IBOutlet weak var unreadCountLabelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleLabelTrailingConstraint: NSLayoutConstraint!
     
+    var typingView: TypingView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        typingView = TypingView(frame: .zero)
+        contentView.addSubview(typingView)
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -31,13 +41,32 @@ class Cell: UITableViewCell {
         
         presenceStatusView.layer.cornerRadius = presenceStatusView.bounds.width / 2
         presenceStatusView.layer.masksToBounds = true
+        contentView.bringSubview(toFront: presenceStatusView)
         
         unreadCountLabel.layer.cornerRadius = unreadCountLabel.bounds.width / 2
         unreadCountLabel.layer.masksToBounds = true
+        
+        typingView.frame = avatarView.frame
+        typingView.layer.cornerRadius = avatarView.layer.cornerRadius
+        typingView.layer.masksToBounds = true
     }
     
     func layout(withItem item: Item?) {
-        timeLabel.text = item == nil ? "" : (item!.chat.recent.date as NSDate).timeAgoSinceNow()?.lowercased()
+        typingView.stopAnimating()
+        
+        if item != nil {
+            if item!.typingText.isEmpty {
+                timeLabel.text = (item!.chat.recent.date as NSDate).timeAgoSinceNow()?.lowercased()
+                
+            } else {
+                typingView.startAnimating()
+                timeLabel.text = item!.typingText
+            }
+            
+        } else {
+            timeLabel.text = ""
+        }
+        
         titleLabel.text = item?.chat.title
         avatarView.image = #imageLiteral(resourceName: "avatar")
         messageLabel.text = item?.chat.recent.content
@@ -53,10 +82,11 @@ class Cell: UITableViewCell {
             unreadCountLabel.text = ""
         }
         
-        presenceStatusView.isHidden = item == nil ? true : !item!.isSomeoneOnline
+        presenceStatusView.isHidden = item == nil ? true : !item!.isActive
         
         setNeedsLayout()
         layoutIfNeeded()
     }
     
 }
+
