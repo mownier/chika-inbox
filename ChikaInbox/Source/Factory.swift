@@ -17,6 +17,7 @@ public final class Factory {
     var theme: Theme?
     var query: (() -> ChikaCore.InboxQuery)?
     var onSelect: ((Chat) -> Void)?
+    var unreadChatCountTracker: ((Int) -> Void)?
     
     public init() {
         self.meID = FirebaseCommunity.Auth.auth().currentUser?.uid ?? ""
@@ -39,6 +40,11 @@ public final class Factory {
         return self
     }
     
+    public func withUnreadChatCountTracker(_ tracker: @escaping (Int) -> Void) -> Factory {
+        self.unreadChatCountTracker = tracker
+        return self
+    }
+    
     public func onSelect(_ block: @escaping (Chat) -> Void) -> Factory {
         self.onSelect = block
         return self
@@ -50,6 +56,7 @@ public final class Factory {
             theme = nil
             query = nil
             onSelect = nil
+            unreadChatCountTracker = nil
         }
         
         let data = DataProvider(meID: meID ?? "")
@@ -61,6 +68,25 @@ public final class Factory {
         scene.query = query
         scene.onSelect = onSelect
         scene.operation = InboxQueryOperation()
+        scene.unreadChatCountTracker = unreadChatCountTracker
+        
+        scene.recentChatMessageListener = RecentChatMessageListener()
+        scene.recentChatMessageListenerOperator = RecentChatMessageListenerOperation()
+        
+        scene.typingStatusListener = TypingStatusListener()
+        scene.typingStatusListenerOperator = TypingStatusListenerOperation()
+        
+        scene.chatTitleUpdateListener = ChatTitleUpdateListener()
+        scene.chatTitleUpdateListenerOperator = ChatTitleUpdateListenerOperation()
+        
+        scene.chatParticipantPresenceListener = ChatParticipantPresenceListener()
+        scene.chatParticipantPresenceListenerOperator = ChatParticipantPresenceListenerOperation()
+        
+        scene.addedIntoChatListener = AddedIntoChatListener()
+        scene.addedIntoChatListenerOperator = AddedIntoChatListenerOperation()
+        
+        scene.unreadCountQuery = UnreadChatMessageCountQuery()
+        scene.unreadCountQueryOperator = UnreadChatMessageCountQueryOperation()
         
         return scene
     }
