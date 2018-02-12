@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		386291A6692D83FBE3F6842B /* Pods_ChikaInboxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EF31F98F637AB3DBA24597 /* Pods_ChikaInboxTests.framework */; };
-		48C224B0202AC10100EB2D0E /* Inbox.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C224AF202AC10100EB2D0E /* Inbox.xcassets */; };
 		48C224B2202AC50E00EB2D0E /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C224B1202AC50E00EB2D0E /* Output.swift */; };
 		48D8D3642029797800A4B8B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48D8D3632029797800A4B8B3 /* GoogleService-Info.plist */; };
 		48D8D3662029856100A4B8B3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D8D3652029856100A4B8B3 /* Data.swift */; };
@@ -39,7 +38,6 @@
 /* Begin PBXFileReference section */
 		1938BAB3B9FD0CD6A060A20C /* Pods-ChikaInboxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChikaInboxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChikaInboxTests/Pods-ChikaInboxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1FFDF5AA7F9790B62412B758 /* Pods-ChikaInbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChikaInbox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChikaInbox/Pods-ChikaInbox.debug.xcconfig"; sourceTree = "<group>"; };
-		48C224AF202AC10100EB2D0E /* Inbox.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Inbox.xcassets; sourceTree = "<group>"; };
 		48C224B1202AC50E00EB2D0E /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		48D8D3632029797800A4B8B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../ChikaFirebaseDemo/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48D8D3652029856100A4B8B3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 				48C224B1202AC50E00EB2D0E /* Output.swift */,
 				48DF604B20296FA600A45624 /* Scene.swift */,
 				48DF604F2029701E00A45624 /* Theme.swift */,
-				48C224AF202AC10100EB2D0E /* Inbox.xcassets */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -254,7 +251,6 @@
 			files = (
 				48DF603320296E1C00A45624 /* LaunchScreen.storyboard in Resources */,
 				48DF603020296E1C00A45624 /* Assets.xcassets in Resources */,
-				48C224B0202AC10100EB2D0E /* Inbox.xcassets in Resources */,
 				48D8D3642029797800A4B8B3 /* GoogleService-Info.plist in Resources */,
 				48DF602E20296E1C00A45624 /* Main.storyboard in Resources */,
 				48DF604A20296F2300A45624 /* Inbox.storyboard in Resources */,
@@ -328,9 +324,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChikaInbox/Pods-ChikaInbox-resources.sh",
+				"${PODS_ROOT}/../../ChikaAssets/ChikaAssets/Source/ChikaAssets.xcassets",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -348,6 +347,7 @@
 				"${BUILT_PRODUCTS_DIR}/ChikaFirebase/ChikaFirebase.framework",
 				"${BUILT_PRODUCTS_DIR}/ChikaRegistrar/ChikaRegistrar.framework",
 				"${BUILT_PRODUCTS_DIR}/ChikaSignIn/ChikaSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/ChikaUI/ChikaUI.framework",
 				"${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCommunity/FirebaseCommunity.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -360,6 +360,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChikaFirebase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChikaRegistrar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChikaSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChikaUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTools.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCommunity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
