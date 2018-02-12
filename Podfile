@@ -26,8 +26,8 @@ target 'ChikaInbox' do
     pod 'ChikaFirebase/Listener:RecentChatMessage'
     pod 'ChikaFirebase/Listener:ChatParticipantPresence'
     
-    pod 'ChikaUI', :path => '../ChikaUI'
-    pod 'ChikaAssets', :path => '../ChikaAssets'
+    pod 'ChikaUI'
+    pod 'ChikaAssets'
     
     target 'ChikaInboxTests' do
         inherit! :search_paths
