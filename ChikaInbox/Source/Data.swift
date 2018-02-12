@@ -14,48 +14,60 @@ protocol Data {
     var unreadChatCount: Int { get }
     
     func item(at index: Int) -> Item?
-    func append(_ chats: [Chat])
-    func update(_ chat: Chat) -> UpdateResult
-    func updateMessageCount(for item: Item)
-    func updateActiveStatus(for participantID: String, isActive: Bool) -> [Int]
-    func updateTypingStatus(for chatID: String, participantID: String, isTyping: Bool) -> Int?
-    func updateTitle(for chatID: String, title: String) -> Int?
-    func removeAll()
     func item(for chat: Chat) -> Item?
-    func tryToUpdateActiveStatus(for chat: Chat)
-}
-
-enum UpdateResult {
+    func append(_ chats: [Chat])
+    func removeAll()
     
-    case new(Bool)
-    case existing(Bool)
+    @discardableResult
+    func increaseUnreadMessageCount(by count: UInt, for chat: Chat) -> Int?
     
-    var isYours: Bool {
-        switch self {
-        case .new(let isYours),
-             .existing(let isYours):
-            return isYours
-        }
-    }
+    @discardableResult
+    func update(with chat: Chat) -> UpdateIndexResult?
+    
+    @discardableResult
+    func updateUnreadMessageCount(for item: Item) -> Int?
+    
+    @discardableResult
+    func updatePresenceStatus(with object: ChatParticipantPresenceListenerObject) -> Int?
+    
+    @discardableResult
+    func updateTypingStatus(with object: TypingStatusListenerObject) -> Int?
+    
+    @discardableResult
+    func updateTitle(with object: ChatTitleUpdateListenerObject) -> Int?
 }
 
 struct Item {
     
     var chat: Chat
-    var isSomeoneOnline: Bool
-    var typingText: String
+    var isActive: Bool
+    var typingPersons: [Person: Bool]
     var unreadMessageCount: UInt
-    var active: [String: Bool]
-    var typing: [String: String]
+    
+    var typingText: String {
+        guard !typingPersons.isEmpty else {
+            return ""
+        }
+        
+        guard typingPersons.count < 5 else {
+            return "There are people typing..."
+        }
+        
+        return typingPersons.flatMap({ $0.key.displayName }).joined(separator: ",").appending(typingPersons.count == 1 ? " is" : " are").appending(" typing...")
+    }
     
     init(chat: Chat) {
         self.chat = chat
-        self.isSomeoneOnline = false
+        self.isActive = false
+        self.typingPersons = [:]
         self.unreadMessageCount = 0
-        self.typingText = ""
-        self.active = [:]
-        self.typing = [:]
     }
+}
+
+struct UpdateIndexResult {
+    
+    fileprivate(set) var old: Int = 0
+    fileprivate(set) var new: Int = 0
 }
 
 class DataProvider: Data {
@@ -88,39 +100,118 @@ class DataProvider: Data {
         return items[index]
     }
     
+    func item(for chat: Chat) -> Item? {
+        guard let index = items.index(where: { $0.chat.id == chat.id }) else {
+            return nil
+        }
+        
+        return items[index]
+    }
+    
     func append(_ chats: [Chat]) {
         items.append(contentsOf: chats.map({ Item(chat: $0) }))
-    }
-    
-    func update(_ newChat: Chat) -> UpdateResult {
-        return .new(false)
-    }
-    
-    func updateMessageCount(for item: Item) {
-    }
-    
-    func updateActiveStatus(for participantID: String, isActive: Bool) -> [Int] {
-        return []
-    }
-    
-    func updateTypingStatus(for chatID: String, participantID: String, isTyping: Bool) -> Int? {
-        return nil
-    }
-    
-    func updateTitle(for chatID: String, title: String) -> Int? {
-        return nil
     }
     
     func removeAll() {
         items.removeAll()
     }
     
-    func item(for chat: Chat) -> Item? {
-        return nil
+    func increaseUnreadMessageCount(by count: UInt, for chat: Chat) -> Int? {
+        guard let index = items.index(where: { $0.chat.id == chat.id }) else {
+            return nil
+        }
+        
+        items[index].unreadMessageCount += count
+        return index
     }
     
-    func tryToUpdateActiveStatus(for chat: Chat) {
-
+    func update(with chat: Chat) -> UpdateIndexResult? {
+        guard !items.isEmpty else {
+            return nil
+        }
+        
+        var item: Item
+        var isNewer: Bool = true
+        var indexResult = UpdateIndexResult()
+        var isMessageCountIncremented: Bool = true
+        
+        if let index = items.index(where: { $0.chat.id == chat.id }), let newest = items.first?.chat {
+            isNewer = chat.recent.date.timeIntervalSince1970 > newest.recent.date.timeIntervalSince1970
+            indexResult.old = index
+            
+            if isNewer {
+                item = items.remove(at: index)
+                indexResult.new = 0
+                
+            } else {
+                item = items[index]
+                indexResult.new = index
+            }
+            
+            isMessageCountIncremented = item.chat.recent.id != chat.recent.id
+            item.chat.recent = chat.recent
+        
+        } else {
+            item = Item(chat: chat)
+        }
+        
+        if item.chat.recent.author.id != meID && isMessageCountIncremented {
+            item.unreadMessageCount += 1
+        }
+        
+        if isNewer {
+            items.insert(item, at: indexResult.new)
+            
+        } else {
+            items[indexResult.old] = item
+        }
+        
+        return indexResult
+    }
+    
+    func updateUnreadMessageCount(for item: Item) -> Int? {
+        guard let index = items.index(where: { $0.chat.id == item.chat.id }) else {
+            return nil
+        }
+        
+        items[index].unreadMessageCount = item.unreadMessageCount
+        return index
+    }
+    
+    func updatePresenceStatus(with object: ChatParticipantPresenceListenerObject) -> Int? {
+        guard let index = items.index(where: { $0.chat.id == object.chatID }) else {
+            return nil
+        }
+        
+        items[index].isActive = object.presence.isActive
+        return index
+    }
+    
+    func updateTypingStatus(with object: TypingStatusListenerObject) -> Int? {
+        guard let index = items.index(where: { $0.chat.id == object.chatID }) else {
+            return nil
+        }
+        
+        switch object.status {
+        case .typing:
+            if items[index].typingPersons.count <= 5 {
+                items[index].typingPersons[object.person] = true
+            }
+        
+        case .notTyping:
+            items[index].typingPersons.removeValue(forKey: object.person)
+        }
+        
+        return index
+    }
+    
+    func updateTitle(with object: ChatTitleUpdateListenerObject) -> Int? {
+        guard let index = items.index(where: { $0.chat.id == object.chatID }) else {
+            return nil
+        }
+        
+        items[index].chat.title = object.title
+        return index
     }
     
 }
