@@ -6,10 +6,28 @@ use_frameworks!
 
 target 'ChikaInbox' do
     
+    pod 'DateTools'
+    
     pod 'ChikaSignIn'
     pod 'ChikaRegistrar'
+    
+    pod 'ChikaFirebase/Auth:SignOut'
+    
     pod 'ChikaFirebase/Query:Inbox'
-    pod 'DateTools'
+    pod 'ChikaFirebase/Query:UnreadChatMessageCount'
+    
+    pod 'ChikaFirebase/Writer:OnlinePresenceSwitcher'
+    pod 'ChikaFirebase/Writer:OfflinePresenceSwitcher'
+    
+    pod 'ChikaFirebase/Listener:Presence'
+    pod 'ChikaFirebase/Listener:TypingStatus'
+    pod 'ChikaFirebase/Listener:AddedIntoChat'
+    pod 'ChikaFirebase/Listener:ChatTitleUpdate'
+    pod 'ChikaFirebase/Listener:RecentChatMessage'
+    pod 'ChikaFirebase/Listener:ChatParticipantPresence'
+    
+    pod 'ChikaUI', :path => '../ChikaUI'
+    pod 'ChikaAssets', :path => '../ChikaAssets'
     
     target 'ChikaInboxTests' do
         inherit! :search_paths
