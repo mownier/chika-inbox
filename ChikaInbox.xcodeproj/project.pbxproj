@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		386291A6692D83FBE3F6842B /* Pods_ChikaInboxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EF31F98F637AB3DBA24597 /* Pods_ChikaInboxTests.framework */; };
 		48C224B2202AC50E00EB2D0E /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C224B1202AC50E00EB2D0E /* Output.swift */; };
+		48D6536220369C6900B0AAC4 /* PlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D6536120369C6900B0AAC4 /* PlaceholderCell.swift */; };
 		48D8D3642029797800A4B8B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48D8D3632029797800A4B8B3 /* GoogleService-Info.plist */; };
 		48D8D3662029856100A4B8B3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D8D3652029856100A4B8B3 /* Data.swift */; };
 		48D8D36820298F4000A4B8B3 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D8D36720298F4000A4B8B3 /* Cell.swift */; };
@@ -39,6 +40,7 @@
 		1938BAB3B9FD0CD6A060A20C /* Pods-ChikaInboxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChikaInboxTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChikaInboxTests/Pods-ChikaInboxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1FFDF5AA7F9790B62412B758 /* Pods-ChikaInbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChikaInbox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChikaInbox/Pods-ChikaInbox.debug.xcconfig"; sourceTree = "<group>"; };
 		48C224B1202AC50E00EB2D0E /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
+		48D6536120369C6900B0AAC4 /* PlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderCell.swift; sourceTree = "<group>"; };
 		48D8D3632029797800A4B8B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../ChikaFirebaseDemo/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48D8D3652029856100A4B8B3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		48D8D36720298F4000A4B8B3 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				48D8D3652029856100A4B8B3 /* Data.swift */,
 				48DF604D2029701100A45624 /* Factory.swift */,
 				48C224B1202AC50E00EB2D0E /* Output.swift */,
+				48D6536120369C6900B0AAC4 /* PlaceholderCell.swift */,
 				48DF604B20296FA600A45624 /* Scene.swift */,
 				48DF604F2029701E00A45624 /* Theme.swift */,
 			);
@@ -399,6 +402,7 @@
 				48D8D3662029856100A4B8B3 /* Data.swift in Sources */,
 				48D8D36820298F4000A4B8B3 /* Cell.swift in Sources */,
 				48DF602B20296E1C00A45624 /* ViewController.swift in Sources */,
+				48D6536220369C6900B0AAC4 /* PlaceholderCell.swift in Sources */,
 				48DF60502029701E00A45624 /* Theme.swift in Sources */,
 				48DF602920296E1C00A45624 /* AppDelegate.swift in Sources */,
 				48DF604C20296FA600A45624 /* Scene.swift in Sources */,
