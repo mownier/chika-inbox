@@ -7,6 +7,7 @@ use_frameworks!
 target 'ChikaInbox' do
     
     pod 'DateTools'
+    pod 'SDWebImage'
     
     pod 'ChikaSignIn'
     pod 'ChikaRegistrar'
