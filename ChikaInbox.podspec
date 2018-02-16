@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name     = 'ChikaInbox'
   s.version  = '0.0.1'
-  s.summary  = 'Inbox Module for Chika'
+  s.summary  = 'Inbox feature for Chika'
   s.platform = :ios, '11.0'
   s.license  = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage = 'https://github.com/mownier/chika-inbox'
