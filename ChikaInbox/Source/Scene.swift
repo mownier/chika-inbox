@@ -39,6 +39,8 @@ public final class Scene: UIViewController {
     
     var unreadCountQuery: ChikaCore.UnreadChatMessageCountQuery!
     var unreadCountQueryOperator: ChikaCore.UnreadChatMessageCountQueryOperator!
+    
+    var isPlaceholderCellShown: Bool = true
 
     deinit {
         dispose()
@@ -52,8 +54,16 @@ public final class Scene: UIViewController {
         unreadChatCountTracker = nil
     }
     
+    public override func loadView() {
+        super.loadView()
+        
+        tableView.register(PlaceholderCell.self, forCellReuseIdentifier: "PlaceholderCell")
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.reloadData()
         
         guard query != nil else {
             return
@@ -64,6 +74,8 @@ public final class Scene: UIViewController {
     }
     
     private func completion(_ result: Result<[Chat]>) {
+        isPlaceholderCellShown = false
+        
         switch result {
         case .ok(let chats):
             for chat in chats {
@@ -72,11 +84,12 @@ public final class Scene: UIViewController {
             }
             
             data.append(chats)
-            tableView.reloadData()
             
         default:
             break
         }
+        
+        tableView.reloadData()
     }
     
     private func getUnreadCount(for chat: Chat) {
@@ -212,15 +225,38 @@ public final class Scene: UIViewController {
 
 extension Scene: UITableViewDataSource {
     
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.itemCount
+        switch section {
+        case 0:
+            return data.itemCount
+        
+        case 1:
+            return isPlaceholderCellShown ? 1 : 0
+        
+        default:
+            return 0
+        }
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! Cell
-        let item = data.item(at: indexPath.row)
-        cell.layout(withItem: item)
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! Cell
+            let item = data.item(at: indexPath.row)
+            cell.layout(withItem: item)
+            return cell
+        
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceholderCell") as! PlaceholderCell
+            return cell
+        
+        default:
+            return UITableViewCell()
+        }
     }
     
 }
@@ -228,11 +264,27 @@ extension Scene: UITableViewDataSource {
 extension Scene: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = data.item(at: indexPath.row) else {
-            return
-        }
+        switch indexPath.section {
+        case 0:
+            guard let item = data.item(at: indexPath.row) else {
+                return
+            }
+            
+            onSelect?(item.chat)
         
-        onSelect?(item.chat)
+        default:
+            break
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 1:
+            return 96
+            
+        default:
+            return UITableViewAutomaticDimension
+        }
     }
     
 }
